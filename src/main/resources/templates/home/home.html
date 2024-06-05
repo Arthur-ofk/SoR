@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+       
+        layout:decorate="~{layouts/layout}" lang="en"
+       
+        th:with="activeMenuItem='dashboard'">
+<head></head>
+</head>
+<body>
+    <div layout:fragment="page-content">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <div class="py-4">
+                <form action="#" th:action="@{/weather}" th:object="${weatherRequest}" method="post">
+                    <div>
+                        <label for="city">City Name:</label>
+                        <input type="text" id="city" th:field="*{city}" required />
+                    </div>
+                    <button type="submit">Get Weather</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div class="py-4">
+            <div th:if="${weatherData != null}">
+                <h2>Weather in <span th:text="${weatherData.city}"></span></h2>
+                <p>Temperature: <span th:text="${weatherData.temperature}">°C</span></p>
+                <p>Condition: <span th:text="${weatherData.condition}"></span></p>
+                <p>Humidity: <span th:text="${weatherData.humidity}">%</span></p>
+                <p>Wind Speed: <span th:text="${weatherData.windSpeed}"> m/s</span></p>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
