@@ -16,6 +16,10 @@
 		<java.version>17</java.version>
 	<!-- Maven plugins --><frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version><frontend-maven-plugin.nodeVersion>v20.10.0</frontend-maven-plugin.nodeVersion><frontend-maven-plugin.npmVersion>10.2.3</frontend-maven-plugin.npmVersion></properties>
 	<dependencies>
+     <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
